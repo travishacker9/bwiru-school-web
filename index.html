@@ -208,7 +208,7 @@
         /* About Page */
         #about-page .about-hero {
             background: linear-gradient(rgba(199, 21, 133, 0.5), rgba(139, 0, 139, 0.7)), 
-                        url("https://tse3.mm.bing.net/th/id/OIP.TDQfWeNeeyMQx-aXuxTT0gHaEh?rs=1&pid=ImgDetMain") center/cover;
+                        url('https://plus.unsplash.com/premium_photo-1681412205381-c0e9681bcbb8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D') center/cover;
             height: 50vh;
             display: flex;
             align-items: center;
@@ -360,13 +360,138 @@
         #results-page .results-table th {
             background-color: var(--secondary);
         }
-}
 
-            photo img {
-            width: 100%;
-            height: 300px;
+        /* ===== NEW STYLES ===== */
+        .map-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--light-bg);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .map-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            background-color: var(--light-bg);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .map-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .news-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-date {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .staff-card {
+            text-align: center;
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .staff-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+        }
 
+        /* Contact Form Styles */
+        .contact-form {
+            margin-top: 40px;
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
 
         /* ===== FOOTER ===== */
         footer {
@@ -485,8 +610,20 @@
             #history-page .right {
                 left: 0%;
             }
+
+            .map-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .map-button {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -494,7 +631,7 @@
         <button class="mobile-menu-btn">☰</button>
         
         <div class="logo-container">
-            <img src="bwiru.png">
+            <img src="bwiru.png" alt="Bwiru Boys School Logo" class="logo">
         </div>
         
         <div class="school-name">
@@ -534,7 +671,7 @@
             <div class="fullscreen-hero">
                 <div class="hero-content">
                     <h2>Welcome to Bwiru Boys</h2>
-                    <p></p>BWIRU BOYS IS A PREMIER INSTITUTION FROM 1920..IS AN EXPERT OF MAKING HIGH AND SKILLED STUDET
+                    <p>BWIRU BOYS IS A PREMIER INSTITUTION FROM 1920. WE ARE EXPERTS IN DEVELOPING HIGHLY SKILLED STUDENTS</p>
                     <div class="hero-buttons">
                         <a href="#admissions" class="cta-button">Apply Now</a>
                         <a href="#about" class="cta-button">Learn More</a>
@@ -555,8 +692,36 @@
                     </div>
                     <div class="achievement-card">
                         <h3>LEADERSHIP DEVELOPMENT</h3>
-                        <p>Over 120 years currently serving in leadership positions across government and private sectors.</p>
+                        <p>Over 120 alumni currently serving in leadership positions across government and private sectors.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- News Section -->
+            <div class="news-section">
+                <h2>Latest News & Announcements</h2>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-date">May 15, 2024</div>
+                        <h3>2024 Form One Selection Results</h3>
+                        <p>The list of selected candidates for Form One 2024 intake is now available...</p>
+                        <a href="#form-one-results" class="read-more">Read More →</a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">April 28, 2024</div>
+                        <h3>Annual Sports Day</h3>
+                        <p>Join us for our annual inter-house sports competition on June 10th...</p>
+                        <a href="#sports-day" class="read-more">Read More →</a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">April 15, 2024</div>
+                        <h3>Academic Prize Giving Day</h3>
+                        <p>Celebrating our top performers from 2023 national examinations...</p>
+                        <a href="#prize-giving" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="view-all-news">
+                    <a href="#all-news" class="cta-button">View All News & Events</a>
                 </div>
             </div>
         </section>
@@ -569,7 +734,7 @@
 
             <div class="content-section">
                 <h2>Our Legacy</h2>
-                <p>Founded in 1920, Bwiru Boys School has grown from humble beginnings to become a regional leader in olevel and Alevel' education, with a current enrollment of 1,200 students and 80 teaching staff.</p>
+                <p>Founded in 1920, Bwiru Boys School has grown from humble beginnings to become a regional leader in secondary education, with a current enrollment of 1,200 students and 80 teaching staff.</p>
                 
                 <div class="about-grid">
                     <div class="about-card">
@@ -585,6 +750,31 @@
                         <p>Meet our dedicated team of educators and administrators</p>
                     </div>
                 </div>
+
+                <!-- Staff Section -->
+                <div class="staff-section">
+                    <h2>Our Leadership Team</h2>
+                    <div class="staff-grid">
+                        <div class="staff-card">
+                            <img src="principal.jpg" alt="School Principal">
+                            <h3>Mr. Thomas Werema</h3>
+                            <p>School Principal</p>
+                            <p>M.Ed (Leadership), B.Sc (Education)</p>
+                        </div>
+                        <div class="staff-card">
+                            <img src="deputy.jpg" alt="Deputy Principal">
+                            <h3>Mrs. Sarah Mwakasege</h3>
+                            <p>Deputy Principal (Academics)</p>
+                            <p>M.Sc (Chemistry), B.Ed (Science)</p>
+                        </div>
+                        <div class="staff-card">
+                            <img src="dos.jpg" alt="Director of Studies">
+                            <h3>Mr. John Mwambene</h3>
+                            <p>Director of Studies</p>
+                            <p>M.A (Education), B.A (History)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -597,8 +787,8 @@
                 <div class="timeline">
                     <div class="timeline-event left">
                         <div class="timeline-content">
-                            <h3>1975</h3>
-                            <p>School founded with 2 classrooms and 50 students under founding principal Mr. THOMAS WEREMA </p>
+                            <h3>1920</h3>
+                            <p>School founded with 2 classrooms and 50 students under founding principal Mr. Thomas Werema</p>
                         </div>
                     </div>
                     <div class="timeline-event right">
@@ -613,13 +803,12 @@
                             <p>Science lab constructed, enabling students to take practical science exams on-site for the first time</p>
                         </div>
                     </div>
- <div class="timeline-event left">
+                    <div class="timeline-event left">
                         <div class="timeline-content">
                             <h3>2010</h3>
-                            <p>Our school get nobel prize in tanzania for being best school</p>
+                            <p>Our school received national recognition as Tanzania's best school</p>
                         </div>
                     </div>
-
                     <div class="timeline-event right">
                         <div class="timeline-content">
                             <h3>2015</h3>
@@ -632,20 +821,18 @@
                             <p>New computer lab opened with 50 workstations. School website launched.</p>
                         </div>
                     </div>
- <div class="timeline-event left">
+                    <div class="timeline-event left">
                         <div class="timeline-content">
                             <h3>2025</h3>
-                            <p>Our school received first PMC'S class</p>
+                            <p>Our school received first PMC's class</p>
                         </div>
                     </div>
-<div class="timeline-event left">
+                    <div class="timeline-event left">
                         <div class="timeline-content">
                             <h3>2025</h3>
-                            <p>Our school received first WEB builders mathias kengele and alliance</p>
+                            <p>Our school received first WEB builders - Mathias Kengele and Alliance</p>
                         </div>
                     </div>
-
-
                     <div class="timeline-event right">
                         <div class="timeline-content">
                             <h3>2025</h3>
@@ -660,7 +847,7 @@
         <section id="academics-page" class="page">
             <div class="content-section">
                 <h1>Academic Programs</h1>
-                <p>We offer comprehensive academic programs following both the CSEE,ASEE and all tanzanian carriculum:</p>
+                <p>We offer comprehensive academic programs following both the CSEE, ASEE and all Tanzanian curriculum:</p>
                 
                 <div class="programs-grid">
                     <div class="program-card">
@@ -694,6 +881,81 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Subject Departments -->
+                <div class="subject-section">
+                    <h2>Our Subject Departments</h2>
+                    <div class="department-tabs">
+                        <button class="tab-button active" data-tab="sciences">Sciences</button>
+                        <button class="tab-button" data-tab="humanities">Humanities</button>
+                        <button class="tab-button" data-tab="languages">Languages</button>
+                        <button class="tab-button" data-tab="technical">Technical</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="sciences">
+                        <h3>Science Department</h3>
+                        <div class="subject-list">
+                            <div class="subject">
+                                <h4>Mathematics</h4>
+                                <p>Taught by 5 specialized teachers with modern teaching aids</p>
+                            </div>
+                            <div class="subject">
+                                <h4>Physics</h4>
+                                <p>Well-equipped lab with 20 workstations</p>
+                            </div>
+                            <div class="subject">
+                                <h4>Chemistry</h4>
+                                <p>Modern laboratory with safety equipment</p>
+                            </div>
+                            <div class="subject">
+                                <h4>Biology</h4>
+                                <p>Field trips and practical experiments</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="humanities">
+                        <h3>Humanities Department</h3>
+                        <div class="subject-list">
+                            <div class="subject">
+                                <h4>History</h4>
+                                <p>Exploring Tanzania's rich heritage</p>
+                            </div>
+                            <div class="subject">
+                                <h4>Geography</h4>
+                                <p>Field studies and GIS technology</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="languages">
+                        <h3>Languages Department</h3>
+                        <div class="subject-list">
+                            <div class="subject">
+                                <h4>English</h4>
+                                <p>Communication and literature</p>
+                            </div>
+                            <div class="subject">
+                                <h4>Kiswahili</h4>
+                                <p>National language mastery</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="technical">
+                        <h3>Technical Department</h3>
+                        <div class="subject-list">
+                            <div class="subject">
+                                <h4>Computer Studies</h4>
+                                <p>Modern computer lab with internet</p>
+                            </div>
+                            <div class="subject">
+                                <h4>Technical Drawing</h4>
+                                <p>CAD and manual drafting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -701,7 +963,7 @@
         <section id="results-page" class="page">
             <div class="content-section">
                 <h1>Examination Results</h1>
-                <h2>CSEE 2024 Performance</h2>
+                <h2>CSEE 2022 Performance</h2>
                 
                 <table class="results-table">
                     <thead>
@@ -742,11 +1004,6 @@
                             <td>27</td>
                             <td>8.1%</td>
                         </tr>
-  <div class="photo-card">
-                        <img src="">
-                        <div class="photo-caption">Modern Science Lab</div>
-                    </div>
-
                     </tbody>
                 </table>
                 
@@ -766,31 +1023,31 @@
         <section id="gallery-page" class="page">
             <div class="content-section">
                 <h1>School Gallery</h1>
-                <p>EXPLORE BWIRU BOYS LIFE AT OUR PICS COLLECTION:</p>
+                <p>EXPLORE BWIRU BOYS LIFE THROUGH OUR PHOTO COLLECTION:</p>
                 
                 <div class="photo-grid">
                     <div class="photo-card">
-                        <img src="download (1).jfif">
+                        <img src="download (1).jfif" alt="Main School Building">
                         <div class="photo-caption">Main School Building</div>
                     </div>
                     <div class="photo-card">
-                        <img src="travis4.jpeg">
+                        <img src="travis4.jpeg" alt="Modern Science Lab">
                         <div class="photo-caption">Modern Science Lab</div>
                     </div>
                     <div class="photo-card">
-                        <img src="travis5.jpeg">
+                        <img src="travis5.jpeg" alt="School Library">
                         <div class="photo-caption">School Library</div>
                     </div>
                     <div class="photo-card">
-                        <img src="travis2.jpeg">
+                        <img src="travis2.jpeg" alt="Athletics Team">
                         <div class="photo-caption">Athletics Team</div>
                     </div>
                     <div class="photo-card">
-                        <img src="travis1.jpeg">
+                        <img src="travis1.jpeg" alt="Drama Festival">
                         <div class="photo-caption">Drama Festival</div>
                     </div>
                     <div class="photo-card">
-                        <img src="OIP.jfif">
+                        <img src="OIP.jfif" alt="Graduation Ceremony">
                         <div class="photo-caption">Graduation Ceremony</div>
                     </div>
                 </div>
@@ -808,55 +1065,82 @@
                         <h3>Address</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Bwiru Boys School<br>
                         P.O Box 123-40200<br>
-                        Bwiru, tanzania</p>
+                        Bwiru, Mwanza, Tanzania</p>
+                        <p><i class="fas fa-clock"></i> Open Hours: 7:30 AM - 4:30 PM (Mon-Fri)</p>
                     </div>
                     <div class="contact-card">
-                        <h3>Phone & Email</h3>
-                        <p><i class="fas fa-phone"></i> +254 700 000000 (Office)<br>
-                        <i class="fas fa-phone"></i> +254 711 000000 (Principal)<br>
-                        <i class="fas fa-envelope"></i> info@bwiruboys.sc.tz</p>
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-phone"></i> +255 28 250 1234 (Office)<br>
+                        <i class="fas fa-phone"></i> +255 784 123456 (Principal)<br>
+                        <i class="fas fa-envelope"></i> info@bwiruboys.ac.tz<br>
+                        <i class="fas fa-globe"></i> www.bwiruboys.ac.tz</p>
                     </div>
                     <div class="contact-card">
-                        <h3>Visiting Hours</h3>
-                        <p><i class="fas fa-clock"></i> Monday-Friday: 8:00 AM - 4:00 PM<br>
-                        <i class="fas fa-clock"></i> Saturday: 9:00 AM - 1:00 PM<br>
-                        <i class="fas fa-times-circle"></i> Closed on school and Public Holidays</p>
+                        <h3>Quick Links</h3>
+                        <p>
+                            <a href="#admissions"><i class="fas fa-file-alt"></i> Admission Forms</a><br>
+                            <a href="#calendar"><i class="fas fa-calendar-alt"></i> School Calendar</a><br>
+                            <a href="#fees"><i class="fas fa-money-bill-wave"></i> Fee Structure</a>
+                        </p>
                     </div>
                 </div>
                 
+                <!-- Enhanced Map Container -->
                 <div class="map-container">
- <!DOCTYPE html>
-<html>
-<head>
-    <title>OUR Location</title>
-    <style>
-        .map-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            border: 2px solid #ddd;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .map-title {
-            text-align: center;
-            font-size: 24px;
-            padding: 10px;
-            background="style-color:blue";
-        }
-        .map-frame {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <div class="map-container">
-        <div class="map-title">Our Location</div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.1060294081726!2d32.885481073594136!3d-2.471813797506949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19ce6550ad9c6039%3A0xb4d9df9fb9fb7ce3!2sBwiru%20Boys%20Secondary%20School!5e0!3m2!1sen!2stz!4v1743769187726!5m2!1sen!2stz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</body>
-</html>
+                    <div class="map-header">
+                        <h2>Our Location</h2>
+                        <p>Find us easily in Bwiru, Mwanza - Near the Bwiru Market</p>
                     </div>
+                    <div class="map-frame">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.1060294081726!2d32.885481073594136!3d-2.471813797506949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19ce6550ad9c6039%3A0xb4d9df9fb9fb7ce3!2sBwiru%20Boys%20Secondary%20School!5e0!3m2!1sen!2stz!4v1743769187726!5m2!1sen!2stz" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="map-actions">
+                        <a href="https://maps.google.com?q=Bwiru+Boys+Secondary+School,Bwiru,Mwanza" 
+                           target="_blank" 
+                           class="map-button">
+                           <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                        <a href="tel:+255282501234" class="map-button">
+                            <i class="fas fa-phone"></i> Call Us
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Additional Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="admission">Admission Inquiry</option>
+                                <option value="academic">Academic Programs</option>
+                                <option value="visit">School Visit</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -877,9 +1161,9 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p><i class="fas fa-map-marker-alt"></i> P.O Box 123, Bwiru</p>
-                <p><i class="fas fa-phone"></i> +254 700 000000</p>
-                <p><i class="fas fa-envelope"></i> info@bwiruboys.sc.tz</p>
+                <p><i class="fas fa-map-marker-alt"></i> P.O Box 123, Bwiru, Mwanza</p>
+                <p><i class="fas fa-phone"></i> +255 28 250 1234</p>
+                <p><i class="fas fa-envelope"></i> info@bwiruboys.ac.tz</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
@@ -892,7 +1176,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Bwiru Boys School | Designed with <i class="fas fa-heart"></i> by School ICT PAUL GOODLUCK(ALLIANCE)</p>
+            <p>&copy; 2024 Bwiru Boys School | Designed with <i class="fas fa-heart"></i> by School ICT Team</p>
         </div>
     </footer>
 
@@ -1038,6 +1322,34 @@
                         // Toggle current dropdown
                         dropdown.style.display = isOpen ? 'none' : 'block';
                     });
+                });
+            }
+
+            // Tab system for subject departments
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Simple form submission handler
+            const inquiryForm = document.getElementById('inquiryForm');
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will contact you soon.');
+                    this.reset();
                 });
             }
         });
